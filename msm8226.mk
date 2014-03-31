@@ -24,9 +24,7 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 # Audio
 PRODUCT_PACKAGES += \
     audio_policy.msm8226 \
-    audio.primary.msm8226 \
     libaudioparameter \
-    libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing
 
@@ -138,11 +136,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
     qcom.bt.le_dev_pwr_class=1 \
     ro.qc.sdk.audio.ssr=false \
     persist.audio.fluence.voicecall=true \
+    persist.audio.fluence.voicerec=false \
     ro.qc.sdk.audio.fluencetype=fluence \
+    persist.audio.fluence.speaker=true \
+    use.voice.path.for.pcm.voip=true \
+    use.dedicated.device.for.voip=true \
     audio.offload.buffer.size.kb=32 \
     audio.offload.gapless.enabled=true \
     av.offload.enable=true \
-    mm.enable.smoothstreaming=true
+    mm.enable.smoothstreaming=true \
+    qcom.hw.aac.encoder=true
 
 # Misc
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -162,10 +165,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
-    rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
+    rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so \
     persist.radio.msgtunnel.start=false \
     persist.sys.ssr.restart_level=3 \
-    persist.sys.qc.sub.rdump.on=1
+    persist.sys.qc.sub.rdump.on=1 \
+    ro.telephony.default_network=7 \
+    telephony.lteOnCdmaDevice=0 \
+    persist.radio.no_wait_for_card=1 \
+    persist.radio.dfr_mode_set=1
 
 # Opengles version 3
 PRODUCT_PROPERTY_OVERRIDES += \

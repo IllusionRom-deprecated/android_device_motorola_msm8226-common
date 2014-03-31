@@ -1,3 +1,6 @@
+# App
+app/TimeService.apk
+
 # Bins
 bin/adsprpcd
 bin/akmd8963
@@ -66,8 +69,8 @@ framework/qcnvitems.jar
 framework/qcrilhook.jar
 
 # HAL
+lib/hw/audio.primary.msm8226.so
 lib/hw/camera.msm8226.so
-lib/hw/power.msm8226.so
 lib/hw/sensors.msm8226.so
 
 # Libs
@@ -158,6 +161,7 @@ vendor/lib/lib-rtpsl.so
 vendor/lib/libsensor1.so
 vendor/lib/libssd.so
 vendor/lib/libtime_genoff.so
+vendor/lib/libTimeService.so
 vendor/lib/libthermalclient.so
 vendor/lib/libxml.so
 
